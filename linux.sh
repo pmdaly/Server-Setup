@@ -16,10 +16,8 @@ else
     git pull origin master
 fi;
 
-# vim plugins 
-if [ -d .vim ]; then
-    echo 'Vim directory exists, skipping...'
-else
-    git clone https://github.com/gmarik/Vundle.vim.git ./.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
-fi;
+# check if node exists, used for coc
+if [ ! command -v node ]; then
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    source /home/pmd/.bashrc && nvm install node
+fi
