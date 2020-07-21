@@ -17,7 +17,10 @@ else
 fi;
 
 # check if node exists, used for coc
-if [ ! command -v node ]; then
+if ! command -v node &> /dev/null
+then
     curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-    source /home/pmd/.bashrc && nvm install node
+    source ~/.bashrc && nvm install node
+else
+    echo 'node already installed'
 fi
