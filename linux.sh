@@ -16,6 +16,8 @@ else
     mv .bashrc .bashrc_old
     git init . && git remote add origin https://github.com/pmdaly/dotfiles.git
     git pull origin master
+    vim +PlugInstall +qall > /dev/null
+    vim +'CocInstall coc-python' +qall > /dev/null
 fi;
 
 # check if node exists, used for coc
