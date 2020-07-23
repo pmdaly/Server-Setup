@@ -24,7 +24,8 @@ if ! command -v node &> /dev/null
 then
     curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
     source ~/.bashrc && nvm install node
-    vim +'CocInstall coc-python' +qall > /dev/null
+    # not sure how to get this to work
+    # vim +'CocInstall coc-python' +qall > /dev/null
 else
     echo 'node already installed'
 fi
