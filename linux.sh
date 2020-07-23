@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # set github
-read -p 'Github Username: ' uname
-read -p 'Github Email: ' email
-git config --global user.name $uname
-git config --global user.email $email
+if [ $# -eq 2 ]; then
+    git config --global user.name $1
+    git config --global user.email $2
+else
+    echo 'Skipping github setup, remember to set name and email!'
+fi
 
 # pulling dotfiles from personal repo
 cd ~
